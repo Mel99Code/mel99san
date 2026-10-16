@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的小窝 ♡</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --pink: #ffb6d9;
+      --pink-deep: #ff7eb9;
+      --lavender: #d8c8ff;
+      --mint: #c4f0e1;
+      --cream: #fff7fb;
+      --text: #6b4a63;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Fredoka", "Zen Maru Gothic", sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 20%, #ffe3f1 0, transparent 40%),
+        radial-gradient(circle at 85% 80%, #e6dcff 0, transparent 40%),
+        var(--cream);
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px 60px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* 飘浮的小装饰 */
+    .float {
+      position: fixed;
+      font-size: 24px;
+      opacity: 0.6;
+      animation: drift 9s ease-in-out infinite;
+      pointer-events: none;
+      user-select: none;
+    }
+    .float:nth-child(1) { top: 8%;  left: 8%;  animation-delay: 0s; }
+    .float:nth-child(2) { top: 20%; right: 10%; animation-delay: 1.5s; font-size: 30px; }
+    .float:nth-child(3) { top: 60%; left: 5%;  animation-delay: 3s; }
+    .float:nth-child(4) { top: 75%; right: 7%; animation-delay: 4.5s; font-size: 28px; }
+    .float:nth-child(5) { top: 40%; right: 4%; animation-delay: 2s; font-size: 20px; }
+    .float:nth-child(6) { top: 88%; left: 15%; animation-delay: 5s; font-size: 22px; }
+
+    @keyframes drift {
+      0%, 100% { transform: translateY(0) rotate(-6deg); }
+      50%      { transform: translateY(-18px) rotate(8deg); }
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--lavender));
+      border: 6px solid #fff;
+      box-shadow: 0 8px 24px rgba(255, 126, 185, 0.35);
+      display: grid;
+      place-items: center;
+      font-size: 60px;
+      animation: bounce 3s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--pink-deep);
+      letter-spacing: 1px;
+    }
+
+    .bio {
+      margin: 10px 0 30px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .links { display: flex; flex-direction: column; gap: 14px; }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 20px;
+      background: #fff;
+      border: 3px solid transparent;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.1rem;
+      font-weight: 600;
+      box-shadow: 0 6px 0 var(--c, var(--pink));
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .link:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 9px 0 var(--c, var(--pink));
+    }
+
+    .link:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 var(--c, var(--pink));
+    }
+
+    .link .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--c, var(--pink));
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .link .label { flex: 1; text-align: left; }
+    .link .arrow { opacity: 0.4; }
+
+    .twitch    { --c: #d9c2ff; }
+    .youtube   { --c: #ffc2c2; }
+    .tiktok    { --c: #bfeef0; }
+    .instagram { --c: #ffc9e3; }
+    .kofi      { --c: #ffe0b3; }
+
+    footer {
+      margin-top: 36px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <span class="float">✨</span>
+  <span class="float">🌸</span>
+  <span class="float">⭐</span>
+  <span class="float">💖</span>
+  <span class="float">☁️</span>
+  <span class="float">🎀</span>
+
+  <main class="card">
+    <div class="avatar">🐰</div>
+
+    <!-- ✏️ 把下面的名字改成你的名字 -->
+    <h1>你的名字</h1>
+    <!-- ✏️ 简介可以随便改 -->
+    <p class="bio">欢迎来到我的小窝～<br />在这里可以找到我的所有频道 ♡</p>
+
+    <!-- ✏️ 把每个链接里的 YOUR_USERNAME 换成你自己的用户名 -->
+    <nav class="links">
+      <a class="link twitch" href="https://www.twitch.tv/YOUR_USERNAME" target="_blank" rel="noopener">
+        <span class="icon">🎮</span><span class="label">Twitch</span><span class="arrow">♡</span>
+      </a>
+      <a class="link youtube" href="https://www.youtube.com/@YOUR_USERNAME" target="_blank" rel="noopener">
+        <span class="icon">▶️</span><span class="label">YouTube</span><span class="arrow">♡</span>
+      </a>
+      <a class="link tiktok" href="https://www.tiktok.com/@YOUR_USERNAME" target="_blank" rel="noopener">
+        <span class="icon">🎵</span><span class="label">TikTok</span><span class="arrow">♡</span>
+      </a>
+      <a class="link instagram" href="https://www.instagram.com/YOUR_USERNAME" target="_blank" rel="noopener">
+        <span class="icon">📸</span><span class="label">Instagram</span><span class="arrow">♡</span>
+      </a>
+      <a class="link kofi" href="https://ko-fi.com/YOUR_USERNAME" target="_blank" rel="noopener">
+        <span class="icon">☕</span><span class="label">Ko-fi</span><span class="arrow">♡</span>
+      </a>
+    </nav>
+
+    <footer>made with ♡</footer>
+  </main>
+</body>
+</html>
