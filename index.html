@@ -146,7 +146,13 @@
       font-size: 0.9rem;
       opacity: 0.7;
     }
-  </style>
+    .avatar { overflow: hidden; }
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  </style> 
 </head>
 <body>
   <span class="float">✨</span>
@@ -157,7 +163,7 @@
   <span class="float">🎀</span>
 
   <main class="card">
-    <div class="avatar">🐰</div>
+    <div class="avatar"><img src="avatar.png" alt="我的头像" /></div>
 
     <!-- ✏️ 把下面的名字改成你的名字 -->
     <h1>mel99</h1>
